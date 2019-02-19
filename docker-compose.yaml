@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  mantisbt:
+    image: kimbrechts/docker-mantisbt:proxy
+    container_name: mantisbt
+    restart: always
+    depends_on:
+      - mantisbt-db
+    networks:
+      utils-bridge:
+        ipv4_address: 172.18.1.2
+
+  mantisbt-db:
+    image: postgres:11.1-alpine
+    container_name: mantisbt-db
+    restart: always
+    environment:
+      POSTGRES_USER: mantisbt
+      POSTGRES_PASSWORD: changeit
+      POSTGRES_DB: mantisbt
+      PGDATA: /data/postgres
+    volumes:
+      - mbtpostgres:/data/postgres
+    networks:
+      utils-bridge:
+        ipv4_address: 172.18.1.3
+
+volumes:
+  mbtpostgres:
+
+networks:
+  utils-bridge:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.1.0/24

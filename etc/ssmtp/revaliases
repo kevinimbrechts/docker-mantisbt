@@ -1,0 +1,2 @@
+root:user@domain.com:my.smtp.com:25
+www-data:user@domain.com:my.smtp.com:25

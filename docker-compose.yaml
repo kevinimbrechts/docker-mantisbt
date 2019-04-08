@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mantisbt:
-    image: kimbrechts/docker-mantisbt:proxy
+    image: kimbrechts/docker-mantisbt:latest
     container_name: mantisbt
     restart: always
     depends_on:

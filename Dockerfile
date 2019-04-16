@@ -36,7 +36,6 @@ RUN apk add --no-cache --virtual mypack \
     docker-php-ext-install pgsql pdo_pgsql && \
     apk del postgresql-dev && \
     # Timezone config
-    rm /etc/localtime && \
     ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime && \
     echo "Europe/Paris" > /etc/timezone && \
     # Install Mantis & md5 checksum

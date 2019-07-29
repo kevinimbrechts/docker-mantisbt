@@ -19,7 +19,7 @@ The configuration files for PHP-FPM are in the `./etc/php/` directory. You can f
   * ./etc/php/php-fpm.conf
   * ./etc/php/php-fpm.d/www.conf
 
-These files is included in this image and does not require any modification, but you can add a volume in the Docker Compose file or create your own image by inheriting from this image or erase the file in the container with this command :
+These files are included in this image and does not require any modification, but you can add a volume in the Docker Compose file or create your own image by inheriting from this image or erase the file in the container with this command :
 ```
 docker cp ./etc/nginx/conf.d/mantisbt.conf mantisbt:/etc/nginx/conf.d/mantisbt.conf
 ```
